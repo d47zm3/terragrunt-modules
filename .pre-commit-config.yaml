@@ -1,0 +1,41 @@
+---
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: trailing-whitespace
+        name: Remove Trailing Whitespaces
+      - id: end-of-file-fixer
+        name: Fix End-Of-File Endings
+      - id: check-yaml
+        name: Check YAML
+      - id: check-added-large-files
+        name: Check For Large Files
+      - id: detect-private-key
+        name: Detect Private Keys
+  - repo: https://github.com/gruntwork-io/pre-commit
+    #  https://github.com/gruntwork-io/pre-commit/releases
+    rev: v0.1.12
+    hooks:
+      - id: tflint
+        args:
+          - "--module"
+          - "--config=.tflint.hcl"
+        name: Terraform Lint
+  - repo: git://github.com/antonbabenko/pre-commit-terraform
+    #  https://github.com/antonbabenko/pre-commit-terraform/releases
+    rev: v1.50.0
+    hooks:
+      - id: terraform_fmt
+        name: Terraform FMT
+      - id: terragrunt_fmt
+        name: Terragrunt FMT
+      - id: terraform_tfsec
+        name: Terraform Security
+        exclude: .terragrunt-cache
+      - id: terraform_docs
+        name: Terraform Docs
+      - id: checkov
+        args:
+          - "--skip-check=CKV_AWS_39,CKV_AWS_18"
+        name: Check Coverage
