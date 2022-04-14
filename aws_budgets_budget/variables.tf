@@ -12,7 +12,7 @@ variable "limit_amount" {
 }
 
 variable "limit_unit" {
-  type = string
+  type    = string
   default = "USD"
 }
 

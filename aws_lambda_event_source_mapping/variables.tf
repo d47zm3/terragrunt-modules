@@ -7,5 +7,5 @@ variable "function_name" {
 }
 
 variable "batch_size" {
- type = number 
+  type = number
 }

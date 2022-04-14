@@ -66,10 +66,6 @@ variable "update_config_max_unavailable" {
   type = number
 }
 
-variable "ec2_ssh_key" {
-  type = string
-}
-
 variable "tags" {
   type = map(string)
 }

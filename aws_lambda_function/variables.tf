@@ -56,7 +56,7 @@ variable "tags" {
 }
 
 variable "environment_variables" {
-  type        = map(string)
-  default     = {}
+  type      = map(string)
+  default   = {}
   sensitive = true
 }

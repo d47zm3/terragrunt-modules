@@ -22,14 +22,9 @@ resource "aws_eks_node_group" "this" {
     max_unavailable = var.update_config_max_unavailable
   }
 
-  remote_access {
-    ec2_ssh_key               = var.ec2_ssh_key
-    source_security_group_ids = [aws_security_group.this.id]
-  }
-
-  lifecycle {
-    ignore_changes = [scaling_config[0].desired_size]
-  }
+  //lifecycle {
+  //  ignore_changes = [scaling_config[0].desired_size]
+  //}
 }
 
 resource "aws_security_group" "this" {

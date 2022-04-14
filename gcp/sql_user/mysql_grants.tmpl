@@ -1,0 +1,7 @@
+%{ for user in users ~}
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM '${user["name"]}'@'${user["host"]}';
+GRANT ALL PRIVILEGES ON `${user["name"]}`.* TO '${user["name"]}'@'${user["host"]}';
+%{ endfor ~}
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'backup'@'34.78.237.76';
+GRANT SELECT, SHOW VIEW, RELOAD, REPLICATION CLIENT, EVENT, TRIGGER, LOCK TABLES ON *.* TO 'backup'@'34.78.237.76';
+FLUSH PRIVILEGES;

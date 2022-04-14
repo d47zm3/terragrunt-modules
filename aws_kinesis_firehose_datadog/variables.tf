@@ -17,12 +17,12 @@ variable "firehose_name" {
 
 variable "kinesis_firehose_buffer" {
   type    = number
-  default = 10
+  default = 4
 }
 
 variable "kinesis_firehose_buffer_interval" {
   type    = number
-  default = 300
+  default = 60
 }
 
 variable "tags" {
@@ -34,14 +34,13 @@ variable "s3_bucket_name" {
   type = string
 }
 
-variable "kinesis_firehose_role_name" {
-  type    = string
-  default = "KinesisFirehoseDatadogRole"
+variable "kinesis_firehose_role_arn" {
+  type = string
 }
 
 variable "content_encoding" {
   type    = string
-  default = "NONE"
+  default = "GZIP"
 }
 
 variable "s3_backup_mode" {

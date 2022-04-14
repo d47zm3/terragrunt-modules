@@ -14,6 +14,10 @@ output "cluster_id" {
   value = aws_eks_cluster.this.id
 }
 
+output "vpc_config" {
+  value = aws_eks_cluster.this.vpc_config
+}
+
 output "aws_iam_openid_connect_provider_url" {
   value = aws_iam_openid_connect_provider.this.url
 }
