@@ -20,3 +20,7 @@ variable "github_repos" {
   type        = list(string)
   default     = []
 }
+
+variable "tags" {
+  type = map(string)
+}
