@@ -4,7 +4,7 @@ variable "name" {
 }
 
 variable "aws_trusted_entity" {
-  type = string
+  type = list(string)
 }
 
 variable "region" {
