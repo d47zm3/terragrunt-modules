@@ -19,6 +19,11 @@ resource "aws_cloudformation_stack_set" "iam_role" {
   administration_role_arn = aws_iam_role.AWSCloudFormationStackSetAdministrationRole.arn
   name                    = var.name
 
+  auto_deployment {
+    enabled                          = true
+    retain_stacks_on_account_removal = false
+  }
+
   parameters = {
     RoleName = "DeploymentsRole"
   }
