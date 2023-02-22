@@ -1,8 +1,8 @@
-var "name" {
+variable "name" {
   type    = string
   default = "DeploymentsRole"
 }
 
-var "aws_trusted_entity" {
+variable "aws_trusted_entity" {
   type = string
 }
