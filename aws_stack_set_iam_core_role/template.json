@@ -19,7 +19,6 @@
                             "Effect": "Allow",
                             "Principal": {
                                 "AWS": ${jsonencode(aws_trusted_entity)}
-                                ]
                             },
                             "Action": [
                                 "sts:AssumeRole"
