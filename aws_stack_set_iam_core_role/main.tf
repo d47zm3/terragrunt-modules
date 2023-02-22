@@ -14,7 +14,7 @@ resource "aws_cloudformation_stack_set" "iam_role" {
   }
 
   parameters = {
-    RoleName = "DeploymentsRole"
+    RoleName = var.name
   }
 
   template_body = templatefile("template.json", { aws_trusted_entity = var.aws_trusted_entity })
