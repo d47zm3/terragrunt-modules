@@ -16,8 +16,15 @@ resource "aws_iam_role" "AWSCloudFormationStackSetAdministrationRole" {
 }
 
 resource "aws_cloudformation_stack_set" "iam_role" {
-  administration_role_arn = aws_iam_role.AWSCloudFormationStackSetAdministrationRole.arn
-  name                    = var.name
+  #administration_role_arn = aws_iam_role.AWSCloudFormationStackSetAdministrationRole.arn
+  name = var.name
+
+  permission_model = "SERVICE_MANAGED"
+
+  capabilities = [
+    "CAPABILITY_NAMED_IAM"
+  ]
+
 
   auto_deployment {
     enabled                          = true
