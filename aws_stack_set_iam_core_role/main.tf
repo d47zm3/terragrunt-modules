@@ -38,7 +38,7 @@ resource "aws_cloudformation_stack_set" "iam_role" {
   template_body = templatefile("template.json", { aws_trusted_entity = var.aws_trusted_entity })
 }
 
-resource "aws_cloudformation_stack_set_instance" "example" {
+resource "aws_cloudformation_stack_set_instance" "global_iam_role" {
   deployment_targets {
     organizational_unit_ids = [var.aws_organization_root_id]
   }
