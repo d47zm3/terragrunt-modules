@@ -18,6 +18,10 @@ resource "aws_cloudformation_stack_set" "iam_role" {
   }
 
   template_body = templatefile("template.json", { aws_trusted_entity = var.aws_trusted_entity })
+
+  lifecycle {
+    ignore_changes = [administration_role_arn]
+  }
 }
 
 resource "aws_cloudformation_stack_set_instance" "global_iam_role" {
