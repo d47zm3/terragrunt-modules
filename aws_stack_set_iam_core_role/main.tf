@@ -7,7 +7,6 @@ resource "aws_cloudformation_stack_set" "iam_role" {
     "CAPABILITY_NAMED_IAM"
   ]
 
-
   auto_deployment {
     enabled                          = true
     retain_stacks_on_account_removal = false
